@@ -13,6 +13,8 @@ services:
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/nftattoo
     ports:
       - "3000:3000"
     depends_on:
